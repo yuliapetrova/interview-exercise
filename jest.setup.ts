@@ -22,9 +22,7 @@ const WDIO_OPTIONS = {
 
 beforeAll(async () => {
   require('expect-webdriverio')
-  global.wiremockLauncher = new wmLauncher({ rootDir: './__stubs__' })
   global.chromedriverLauncher = new launcher()
-  await global.wiremockLauncher.onPrepare(WDIO_OPTIONS)
   await global.chromedriverLauncher.onPrepare(WDIO_OPTIONS)
   global.browser = await remote(WDIO_OPTIONS)
 })
